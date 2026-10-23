@@ -33,6 +33,7 @@ img{display:block;max-width:100%}
 .brand img{width:46px;height:46px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
 .brand b{display:block;font-family:var(--fd);font-size:26px;font-weight:700;color:var(--gold-hi);line-height:1.05}
 .brand small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.lang.bro{inset-inline-end:76px;display:inline-flex;align-items:center;gap:6px;color:var(--gold-hi);text-decoration:none;border-color:rgba(201,164,106,.55)}.lang.bro svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lang{position:fixed;z-index:20;top:max(18px,env(safe-area-inset-top));inset-inline-end:20px;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font-size:13px}
 /* dock */
 .dock{position:fixed;z-index:20;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;gap:2px;padding:6px;border-radius:20px;background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);border:1px solid var(--line);box-shadow:0 20px 50px -18px rgba(0,0,0,.8)}
@@ -190,7 +191,7 @@ model-viewer{width:100%;height:100%;background:radial-gradient(70% 70% at 50% 60
  </div>
 </section>
 <div class="brand"><img src="assets/brand/logo.png" alt=""><div><b data-i="pname">أعالي الفردوس</b><small data-i="city">كربلاء المقدسة · شارع الروضتين</small></div></div>
-<button class="lang" id="b-lang">EN</button>
+<button class="lang" id="b-lang">EN</button><a class="lang bro" id="b-bro" href="assets/brochure.pdf" download="Aali-Al-Firdous-Brochure.pdf"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span data-i="broShort">البروشور</span></a>
 <nav class="rail" id="rail" aria-label="floors"></nav>
 <div class="hint" id="hint" data-i="hint">اسحب لتدوير البرج، واختر طابقاً لاستكشافه</div>
 <div class="tip" id="tip"></div>
@@ -226,7 +227,7 @@ const T={
   status:{available:'متاحة',reserved:'محجوزة',sold:'مباعة'},avail:'متاحة',
   tourT:'الجولة الافتراضية',tourN:'تعمل مع نظارات الواقع الافتراضي',openNew:'فتح في نافذة جديدة',arT:'البرج على طاولتك',arN:'ضع مجسّم البرج في مكانك عبر كاميرا هاتفك',arBtn:'عرض في مساحتي',arQr:'امسح الرمز بهاتفك لعرض البرج على طاولتك بالواقع المعزز.',arLoad:'جارٍ تحميل المجسّم',arErr:'تعذّر تحميل المجسّم. تحقق من الاتصال وحاول مجدداً.',camBtn:'عرض بالكاميرا',camHint:'اسحب بإصبع لتدوير البرج حول نفسه · بإصبعين للتكبير والتحريك',camShot:'التقاط صورة',camDenied:'لم يُسمح باستخدام الكاميرا. فعّل إذن الكاميرا للموقع من إعدادات المتصفح.',arInApp:'لتشغيل الكاميرا افتح الرابط في Chrome أو Safari (وليس داخل واتساب أو إنستغرام).',arFail:'لم يتمكن هاتفك من تشغيل الواقع المعزز هنا. افتح الرابط في Chrome (أندرويد) أو Safari (آيفون) وامنح إذن الكاميرا.',arTip:'حرّك هاتفك ببطء فوق سطح مستوٍ ومضاء',arTip2:'المجسّم بمقياس طاولة (نحو 45 سم). وجّه الكاميرا إلى أرضية أو طاولة مضاءة جيداً وحرّك الهاتف ببطء حتى يظهر السطح، ثم المس الشاشة لتثبيت البرج.',
   galT:'المعرض',filmT:'فيلم المشروع',download:'تحميل الفيلم',locT:'الموقع',mapTab:'الخريطة',viewTab:'الإطلالة نحو الحرم',imgTab:'صور الموقع',replay:'إعادة',gmaps:'فتح في خرائط Google',
-  contactT:'تواصل معنا',site:'الموقع الإلكتروني',brochure:'تحميل البروشور',by:'تصميم وتنفيذ',credit:'تصميم التطبيق',creditAsk:'لتصميم تطبيق مماثل لمشروعك',zoom:'مرّر أو انقر مرتين للتكبير'},
+  contactT:'تواصل معنا',site:'الموقع الإلكتروني',brochure:'تحميل البروشور',broShort:'البروشور',by:'تصميم وتنفيذ',credit:'تصميم التطبيق',creditAsk:'لتصميم تطبيق مماثل لمشروعك',zoom:'مرّر أو انقر مرتين للتكبير'},
  en:{pname:'Aali Al-Firdous',city:'Holy Karbala · Al-Rawdatain St.',tagline:'Refined living in the heart of Holy Karbala, steps from Imam Hussein Shrine',explore:'Explore the tower',loadingT:'Loading',
   hint:'Drag to rotate the tower, then pick a floor',tour:'360° tour',film:'Film',loc:'Location',gallery:'Gallery',ar:'On your table',contact:'Contact',
   plan:'Plan',views:'360° views of the space',graphic:'Colour plan',units:'Apartments on this floor',pick:'Pick an apartment on the plan',apt:'Apartment tours',interiors:'Interior design',
@@ -235,7 +236,7 @@ const T={
   status:{available:'Available',reserved:'Reserved',sold:'Sold'},avail:'available',
   tourT:'Virtual tour',tourN:'Works with VR headsets',openNew:'Open in new window',arT:'The tower on your table',arN:'Place a model of the tower in your space with your phone camera',arBtn:'View in my space',arQr:'Scan with your phone to place the tower on your table in AR.',arLoad:'Loading the model',arErr:'Could not load the model. Check your connection and try again.',camBtn:'View with camera',camHint:'Drag to turn the tower in place · two fingers to resize and move',camShot:'Take photo',camDenied:'Camera permission was denied. Enable camera access for this site in your browser settings.',arInApp:'To use the camera, open this link in Chrome or Safari (not inside WhatsApp or Instagram).',arFail:'AR could not start here. Open the link in Chrome (Android) or Safari (iPhone) and allow camera access.',arTip:'Move your phone slowly over a flat, well-lit surface',arTip2:'Tabletop scale (about 45 cm). Point the camera at a well-lit floor or table and move the phone slowly until the surface is found, then tap to place the tower.',
   galT:'Gallery',filmT:'Project film',download:'Download film',locT:'Location',mapTab:'Map',viewTab:'View to the shrine',imgTab:'Location images',replay:'Replay',gmaps:'Open in Google Maps',
-  contactT:'Contact us',site:'Website',brochure:'Download brochure',by:'Developed by',credit:'App design',creditAsk:'for a similar app for your project',zoom:'Scroll or double-click to zoom'}};
+  contactT:'Contact us',site:'Website',brochure:'Download brochure',broShort:'Brochure',by:'Developed by',credit:'App design',creditAsk:'for a similar app for your project',zoom:'Scroll or double-click to zoom'}};
 let lang=new URLSearchParams(location.search).get('lang')==='en'?'en':'ar';
 const t=k=>T[lang][k]??k; const L=o=>o?(o[lang]??o.en):'';
 let D, sel=null, hover=null, curUnit=null, ready=false;
@@ -392,7 +393,7 @@ async function openUnit(code){
   <div class="fact"><span>${t('beds')}</span><b>${ty.beds}</b></div><div class="fact"><span>${t('baths')}</span><b>${ty.baths}</b></div><div class="fact wide"><span>${t('type')}</span><b>${L(ty.name)}</b></div></div>
   ${ty.note?`<p class="star">✦ ${L(ty.note)}</p>`:''}
   ${D.config.showSalesStatus&&u.status?`<p class="star" style="color:${D.config.statusColors[u.status]}">● ${t('status')[u.status]}</p>`:''}
-  ${D.contact?`<div class="st">${t('ask')}</div><div class="cta">${D.contact.whatsapp.map((w,i)=>`<a class="btn${i?' ghost':''}" target="_blank" rel="noopener" href="https://wa.me/${w}?text=${encodeURIComponent(t('msg')+' '+code)}">${IWA}${D.contact.phones[i]}</a>`).join('')}</div>`:''}
+  ${D.contact?`<div class="st">${t('ask')}</div><div class="cta">${D.contact.whatsapp.map((w,i)=>`<a class="btn${i?' ghost':''}" target="_blank" rel="noopener" href="https://wa.me/${w}?text=${encodeURIComponent(t('msg')+' '+code)}">${IWA}${D.contact.phones[i]}</a>`).join('')}${D.project.brochure?`<a class="btn ghost" href="${D.project.brochure}" download>${t('brochure')}</a>`:''}</div>`:''}
   ${tours.length?`<div class="st">${t('apt')}</div><div class="cta">${tours.map(tr=>`<button class="btn ghost" data-tour="${tr.id}">${I360}${L(tr.name)}</button>`).join('')}${tours.some(tr=>tr.vr)?`<button class="btn ghost" id="u-vr">${I360}VR</button>`:''}</div>`:''}
   <div class="st">${t('interiors')}</div>${thumbs(D.apartmentMedia.gallery,'g')}
   <p class="note">${t('cadNote')}</p></div></div>`;
